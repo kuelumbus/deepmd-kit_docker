@@ -35,8 +35,8 @@ ENV tensorflow_version=$tensorflow_version
 # If download lammps with git, there will be errors during installion. Hence we'll download lammps later on.
 RUN cd /root && \
     git clone https://github.com/deepmodeling/deepmd-kit.git deepmd-kit && \
-    git clone https://github.com/tensorflow/tensorflow tensorflow && \
-    cd tensorflow && git checkout "r$tensorflow_version"
+    git clone https://github.com/tensorflow/tensorflow tensorflow -b "r$tensorflow_version" --depth=1 && \
+    cd tensorflow
 # install bazel for version 0.13.1
 RUN wget https://github.com/bazelbuild/bazel/releases/download/0.13.1/bazel-0.13.1-installer-linux-x86_64.sh && \
     bash bazel-0.13.1-installer-linux-x86_64.sh
