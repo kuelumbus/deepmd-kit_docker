@@ -89,8 +89,6 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
     pip3.6 install numpy && \
     pip3.6 install phonoLAMMPS phonopy seekpath
 
-
-
 # Input files must be in te /app directory to use them
 WORKDIR /app
 

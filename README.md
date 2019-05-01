@@ -9,7 +9,7 @@ Features
 
 ## Build the image
 ```bash
-git clone https://github.com/kuelumbus/deepmd-kit_docker.git
+git clone https://github.com/kuelumbus/docker-deepmd-kit.git
 cd deepmd-kit_docker && docker build -f Dockerfile -t deepmd-gpu .
 ```
 The `ENV` statement in Dockerfile sets the install prefix of packages. These environment variables can be set by users themselves.
