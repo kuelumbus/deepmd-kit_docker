@@ -87,7 +87,7 @@ ENV LD_LIBRARY_PATH="/root/lammps-stable/src:${LD_LIBRARY_PATH}"
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python3.6 get-pip.py && \
     pip3.6 install numpy && \
-    pip3.6 install phonoLAMMPS phonopy seekpath
+    pip3.6 install phonoLAMMPS phonopy seekpath tensorflow-gpu==1.8.0
 
 # Input files must be in te /app directory to use them
 WORKDIR /app
