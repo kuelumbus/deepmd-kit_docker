@@ -26,8 +26,9 @@ A bash executable to run `dp_train | dp_test | dp_frz` should look like (e.g. `d
 docker run -it --rm  \
     --runtime=nvidia \
     --mount type=bind,source="$(pwd)",target=/app \
+    -e CUDA_VISIBLE_DEVICES="$1" \
     deepmd-gpu:latest \
-    dp_train $* 
+    dp_train ${@:2} 
 ```
 Similar for lammps run as (`lmp_mpi n_cores -in in.lammps`). Make sure predictions during the lammps run are done on the CPU and not GPU by setting `CUDA_VISIBLE_DEVICES=""` - I am not sure if this is necessary.
 ```bash

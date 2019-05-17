@@ -8,8 +8,12 @@ cd /root/lammps*/src/
 cp -r $deepmd_source_dir/source/build/USER-DEEPMD .
 
 #Now build Lammps
+make yes-molecule
+make yes-class2
 make yes-kspace
 make yes-user-phonon
+make yes-user-meamc
 make yes-user-deepmd
+
 make mpi -j20
 make mpi -j20 mode=shlib
